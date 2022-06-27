@@ -18,3 +18,39 @@ const helpers = require("./utils/helpers");
 
 // Initialize handlebars for the html templates
 const hbs = exphbs.create({ helpers });
+// Initialize sessions
+const sess = {
+    secret: process.env.DB_SECRET,
+    cookie: {},
+    resave: false,
+    saveUninitialized: true,
+    store: new SequelizeStore({
+        db: sequelize,
+        checkExpirationInterval: 1000 * 60 * 10, // will check every 10 minutes
+        expiration: 1000 * 60 * 30 // will expire after 30 minutes
+    })
+};
+// Initialize server
+const app = express();
+// Define the port for the server
+const PORT = process.env.PORT || 3001;
+// Set handlebars as the template engine for the server
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
+
+app.use(session(sess));
+// Give the server a path to the public directory for static files
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Have Express parse JSON
+app.use(express.json());
+app.use(express.urlencoded({
+    extended: true
+}));
+app.use(routes);
+
+sequelize.sync();
+// Turn on connection to db and then to the server
+app.listen(PORT, () => {
+  console.log(`App listening on port ${PORT}!`);
+});
