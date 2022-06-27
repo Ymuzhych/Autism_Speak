@@ -1,3 +1,4 @@
+// A function to edit a post
 async function editFormHandler(event) {
   event.preventDefault();
 
@@ -8,7 +9,7 @@ async function editFormHandler(event) {
   const post_id = window.location.toString().split("/")[
     window.location.toString().split("/").length - 1
   ];
-
+  // Get the post title and post text from the form
   const response = await fetch(`/api/posts/${post_id}`, {
     method: "PUT",
     body: JSON.stringify({
@@ -19,7 +20,7 @@ async function editFormHandler(event) {
       "Content-Type": "application/json",
     },
   });
-
+ // if the edit action is successful, redirect to the dashboard page, otherwise display the error
   if (response.ok) {
     document.location.replace("/dashboard");
   } else {
