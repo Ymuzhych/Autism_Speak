@@ -2,17 +2,42 @@ const express = require("express");
 const routes = require("./controllers");
 const sequelize = require("./config/connection");
 const path = require("path");
-
+const multer = require("multer");
+const cors = require("cors");
 
 const helpers = require("./utils/helpers");
 // Initialize handlebars for the html templates
 const exphbs = require("express-handlebars");
 const hbs = exphbs.create({ helpers });
 
+app.use(cors());
+
 const session = require("express-session");
 
 // Initialize server
 const app = express();
+
+//Tells multer where to upload files
+const fileStorageEngine = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null,"./images");
+    },
+    filename: (req, file, cb) => {
+        cb(null, Date.now() + "--" + file.originalname);
+    },
+});
+
+const upload = multer({ storage: fileStorageEngine });
+
+// File route Handler
+app.post("/single", upload.single("image"), (req, 
+    res) => {
+    console.log(req.file);
+    res.send("Uploaded File");
+});
+
+
+
 // Define the port for the server
 const PORT = process.env.PORT || 3001;
 
