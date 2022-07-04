@@ -4,27 +4,33 @@
 
 body,
 html {
+    background: url("../image/img_0.png") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     height: 100%;
     padding: 0;
     margin: 0;
     font-family: sans-serif;
-    color: rgb(25, 55, 58);
+    color: rgb(58, 41, 41);
 }
 
-main,
 .site-name {
-    background-color: #53f4e7;
+    background-color: #c39be7;
+    font-size: 3rem;
+
 }
 
 a,
 .btn-no-style,
 #comment-subtitle {
-    color: #41e0da;
+    color: rgb(53, 18, 18);
 }
 
 a:hover,
 .btn-no-style:hover {
-    color: #3486eb;
+    color: rgb(129, 11, 115);
 }
 
 a {
@@ -34,18 +40,21 @@ a {
 }
 
 button {
-    background-color: #436691;
-    border: 0;
+    background-color: #c39be7;
+    margin-bottom: 10px;
     padding: 1%;
-    color: white;
+    color: #333;
     font-weight: bold;
-    transition: background-color .1s;
     cursor: pointer;
     border-radius: 5px;
+    border-style: double;
+    border: 3px solid black;
+    border-style: double;
+    padding-bottom: 10px;
 }
 
 button:hover {
-    background-color: #3486eb;
+    background-color: #e4c4e6;
 }
 
 .post-list {
@@ -99,11 +108,12 @@ form label {
     justify-content: space-between;
 }
 
+/* 
 header,
-.site-row,
+.site-row, */
 .info-section,
 .form-heading {
-    background-color: #1e0e68;
+    background-color: #c39be7;
 }
 
 .login-page,
@@ -111,6 +121,7 @@ header,
 .new-form-page,
 .edit-form-page {
     border: 3px solid black;
+    border-style: double;
     padding-bottom: 10px;
 }
 
@@ -145,7 +156,7 @@ header h1 {
 
 .site-row {
     display: flex;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1.5px solid rgb(38, 34, 34);
     justify-content: center;
 }
 
@@ -177,7 +188,7 @@ main {
 }
 
 .delete-post-btn {
-    background-color: #d41414;
+    background-color: #ec0505;
 }
 
 .delete-post-btn:hover {
@@ -188,6 +199,7 @@ main {
     margin-bottom: 2%;
     line-height: 150%;
     border: 3px solid black;
+    border-style: double;
 }
 
 .post .title span {
@@ -199,7 +211,7 @@ main {
 .edit-link {
     display: block;
     margin: -1.5% 0 2% 0;
-    color: #36048d;
+    color: #2c2307;
 }
 
 .comment-form {
@@ -209,10 +221,11 @@ main {
 .comment {
     padding: 1%;
     margin-bottom: 1%;
+    background-color: #c39be7;
 }
 
 .comment:nth-child(odd) {
-    background-color: #fff5eb;
+    background-color: #c6d4b0;
 }
 
 .comment .meta {
@@ -250,7 +263,7 @@ main {
 
 .form-heading h1,
 .form-heading h2 {
-    color: #20c5d4;
+    color: rgb(53, 18, 18);
 }
 
 .login-form,
@@ -267,10 +280,15 @@ main {
     width: 100%;
 }
 
+h2 {
+    font-size: 1.5rem;
+    color: #5d0ba5;
+}
+
 footer {
-    border-top: 1px solid #53f4e7;
+    border-top: 1.5px rgb(38, 34, 34);
     display: flex;
     justify-content: center;
     padding: 1%;
-    font-size: 80%;
+    font-size: 110%;
 }
