@@ -106,8 +106,10 @@ Presentation:
 https://docs.google.com/presentation/d/1fKuNVQmavW5b9uAvE2g2nCfL4kQMVG5xw8Cxx0UD8Qc/edit?usp=sharing
 
 Deployed:
+https://ymuzhych.github.io/Autism_Speak/
 
 Repo:
+https://github.com/Ymuzhych/Autism_Speak
 
 Heroku:
 
