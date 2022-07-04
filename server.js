@@ -1,6 +1,7 @@
 const express = require("express");
 const routes = require("./controllers");
 const sequelize = require("./config/connection");
+const favicon = require('serve-favicon')
 const path = require("path");
 const multer = require("multer");
 const cors = require("cors");
@@ -16,6 +17,7 @@ const session = require("express-session");
 
 // Initialize server
 const app = express();
+
 
 //Tells multer where to upload files
 const fileStorageEngine = multer.diskStorage({
@@ -35,6 +37,7 @@ app.post("/single", upload.single("image"), (req,
     console.log(req.file);
     res.send("Uploaded File");
 });
+
 
 
 
@@ -65,6 +68,7 @@ app.use(express.urlencoded({
     extended: true
 }));
 // Give the server a path to the public directory for static files
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, 'public')));
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
