@@ -19,8 +19,10 @@
                 <a href="/dashboard"> My Dashboard</a>
                 <button id="logout" class="btn-no-style logout">LogOut</button>
                 {{else }}
-                <a href="/login">LogIn</a>
-                <a href="/signup">SignUp</a>
+              
+                <a href="/login">LogIn</a> 
+                <a id="logout" class="btn-no-style logout"  href="/signup" >SignUp</a>
+                {{!-- <ahref="/signup">SignUp</a> --}}
                 {{/if}}
             </nav>
         </header>
