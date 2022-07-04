@@ -3,8 +3,8 @@ const routes = require("./controllers");
 const sequelize = require("./config/connection");
 const favicon = require('serve-favicon');
 const multer = require("multer");
-const cors = require("cors");
 const path = require("path");
+
 
 const helpers = require("./utils/helpers");
 // Initialize handlebars for the html templates
@@ -66,7 +66,7 @@ app.use(express.json());
 app.use(express.urlencoded({
     extended: true
 }));
-app.use(cors());
+// app.use(cors());
 // Give the server a path to the public directory for static files
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, 'public')));
