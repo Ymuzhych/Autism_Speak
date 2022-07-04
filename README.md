@@ -17,23 +17,33 @@ A forum for parents or really any family of ASD children to discuss anything rel
 
 - Sign Up
 
+
 ![](./public/image/sign_up.png)
+
 
 - LogIn
 
+
 ![](./public/image/login.png)
+
+
 
 - Home Page
 
+
+
 ![](./public/image/home_page.png)
 
+
 - Dashboard
+
 
 ![](./public/image/myDashboard.png)
 
 - Edit & Comment
 
 ![](./public/image/Edit.png)
+
 ![](./public/image/comment.png)
 
 ## User story
@@ -70,7 +80,18 @@ Did you know that the number of children with Autism Spectrum Disorder (ASD) is 
 
 ## Additional description about the project and its Development
 
-* Built With
+- Add a .env file to the root of the app with the following details
+
+```text
+DB_NAME = 'blog_db'
+DB_USER = 'root'
+DB_PW = '******'
+DB_SECRET = '******'
+// JAWSDB_URL = '';
+
+```
+
+## Built With:
 - CSS
 - JAVASCRIPT
 - HANDLEBARS
@@ -79,10 +100,11 @@ Did you know that the number of children with Autism Spectrum Disorder (ASD) is 
 - NODE.JS
 - EXPRESS
 - Bulma
-=======
-## Links
+
+## Links:
 Presentation:
 https://docs.google.com/presentation/d/1fKuNVQmavW5b9uAvE2g2nCfL4kQMVG5xw8Cxx0UD8Qc/edit?usp=sharing
+
 Deployed:
 
 Repo:
@@ -90,7 +112,7 @@ Repo:
 Heroku:
 
 
-## Contributors
+## Contributors:
 * Yuliia Muzhychenko
 
 * JaNessa McDonald
