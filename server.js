@@ -1,17 +1,16 @@
 const express = require("express");
 const routes = require("./controllers");
 const sequelize = require("./config/connection");
-const favicon = require('serve-favicon')
-const path = require("path");
+const favicon = require('serve-favicon');
 const multer = require("multer");
 const cors = require("cors");
+const path = require("path");
 
 const helpers = require("./utils/helpers");
 // Initialize handlebars for the html templates
 const exphbs = require("express-handlebars");
 const hbs = exphbs.create({ helpers });
 
-app.use(cors());
 
 const session = require("express-session");
 
@@ -67,6 +66,7 @@ app.use(express.json());
 app.use(express.urlencoded({
     extended: true
 }));
+app.use(cors());
 // Give the server a path to the public directory for static files
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -74,6 +74,7 @@ app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 app.use(routes);
+
 
 sequelize.sync();
 // Turn on connection to db and then to the server
