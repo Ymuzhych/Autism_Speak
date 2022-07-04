@@ -4,14 +4,11 @@ const sequelize = require("./config/connection");
 const favicon = require('serve-favicon')
 const path = require("path");
 const multer = require("multer");
-const cors = require("cors");
 
 const helpers = require("./utils/helpers");
 // Initialize handlebars for the html templates
 const exphbs = require("express-handlebars");
 const hbs = exphbs.create({ helpers });
-
-app.use(cors());
 
 const session = require("express-session");
 
