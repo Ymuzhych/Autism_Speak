@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autism Speak</title>
+    <link rel="icon" type="image/x-icon" href="/public/favicon.ico"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <h1>
+                <a href="/">Home</a>
+            </h1>
+            <nav>
+                {{#if loggedIn}}
+                <a href="/dashboard"> My Dashboard</a>
+                <button id="logout" class="btn-no-style logout">LogOut</button>
+                {{else }}
+              
+                <a href="/login">LogIn</a> 
+                <a id="logout" class="btn-no-style logout"  href="/signup" >SignUp</a>
+                {{!-- <ahref="/signup">SignUp</a> --}}
+                {{/if}}
+            </nav>
+        </header>
+        <div class="site-row">
+            <div class="site-name">
+                <h1>Autism👪Speak</h1>
+            </div>
+        </div>
+        <main>
+            {{{ body }}}
+    
+        </main>
+        <footer>
+        <div class="content has-text-centered">
+            <p>Made with ❤️</p>
+         </div>
+        </footer>
+    
+    </div>
+
+    {{#if loggedIn}}
+    <script src="/javascript/logout.js"></script>
+    {{/if}}
+</body>
+
+</html>

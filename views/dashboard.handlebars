@@ -1,0 +1,22 @@
+<section class="new-post-section">
+    <button type="submit" class="btn" id="create-new-post">+ Tell Me Your Story ✎ </button>
+</section>
+
+
+{{#if posts.length}}
+<section>
+    <h2>Your Dashboard</h2>
+    <ul class="post-list">
+        {{#each posts as |post|}}
+        
+        {{> post-info post}}
+        <li>
+            <a href="/dashboard/edit/{{post.id}}" class="edit-link" style="display:inline-block;">Edit Post</a>
+            <a style="float:right;text-align:right;display:inline-block;" href="/post/{{id}}" class="links">Comment Post</a>  
+        </li>
+        {{/each}}
+    </ul>
+</section>
+{{/if}}
+
+<script src="/javascript/create-post.js"></script>
